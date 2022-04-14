@@ -1,0 +1,11 @@
+site_name: napari-mytest
+site_description: just a test
+site_author: Andrea Bassi
+
+theme: readthedocs
+
+
+repo_url: https://github.com/andreabassi78/napari-mytest
+
+pages:
+- Home: index.md
