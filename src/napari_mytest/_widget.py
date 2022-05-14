@@ -18,10 +18,10 @@ def function1(image: Image):
     
 
 class shared_variables:
-    def init(self, c = 0):
+    def __init__(self, c = 0):
         self.c = c
 
-my_shared_vars = shared_variables  
+my_shared_vars = shared_variables(15)  
     
     
 
@@ -30,10 +30,10 @@ if __name__ == '__main__':
     import napari
     viewer = napari.Viewer()
 
-    widget_0 = function0()
+    widget0 = function0()
     widget1 = function1()
     
-    viewer.window.add_dock_widget(widget_0, name = 'mywidget 0',
+    viewer.window.add_dock_widget(widget0, name = 'mywidget 0',
                                   area='right', add_vertical_stretch=True)
     viewer.window.add_dock_widget(widget1, name = 'mywidget 1',
                                   area='right', add_vertical_stretch=True)
