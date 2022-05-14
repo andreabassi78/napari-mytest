@@ -17,11 +17,20 @@ def function1(image: Image):
     image.scale = [my_shared_vars.c,1,1]
     
 
-class shared_variables:
-    def __init__(self, c = 0):
-        self.c = c
 
-my_shared_vars = shared_variables(15)  
+class InventoryItem:
+    """Class for keeping track of an item in inventory."""
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+
+from dataclasses import dataclass
+@dataclass
+class Shared_variables:
+    c: int = 15
+
+my_shared_vars = Shared_variables(15)  
     
     
 
