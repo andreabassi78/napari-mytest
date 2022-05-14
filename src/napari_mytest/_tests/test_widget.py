@@ -15,4 +15,4 @@ def test_widgets(make_napari_viewer, capsys):
     
     # captured = capsys.readouterr()
     
-    assert im_layer.scale == [3,1,1] 
+    assert im_layer.scale[0] == 3 
