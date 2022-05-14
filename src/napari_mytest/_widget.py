@@ -3,29 +3,32 @@ Test code for napari plugin
 """
 
 from magicgui import magic_factory
+from napari.layers import Image
 
 
 @magic_factory
-def function0(a: int = 2, c: int = 0):
-    pass
+def function0(a: int = 5):
+    c= a
+    print(c)
+
 
 @magic_factory
-def function1(b: int = 3):
-    #a = widget0.a.value 
-    a = make_widget_0.a.value
-    c = a*b 
-    make_widget_0.c.value = c 
+def function1(image: Image):
+    image.scale = [c,1,1]
     
+
+global c
+c = 2  
 
 # this will not be executed by the plugin: widget0.a will not exists there
 if __name__ == '__main__':
     import napari
     viewer = napari.Viewer()
 
-    make_widget_0 = function0()
+    widget_0 = function0()
     widget1 = function1()
     
-    viewer.window.add_dock_widget(make_widget_0, name = 'mywidget 0',
+    viewer.window.add_dock_widget(widget_0, name = 'mywidget 0',
                                   area='right', add_vertical_stretch=True)
     viewer.window.add_dock_widget(widget1, name = 'mywidget 1',
                                   area='right', add_vertical_stretch=True)
