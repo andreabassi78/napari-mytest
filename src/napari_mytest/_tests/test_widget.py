@@ -1,9 +1,8 @@
 from napari_mytest import function0, function1
-import numpy as np
 
     
 def test_widgets(make_napari_viewer, capsys):
-    viewer = make_napari_viewer()
+    # viewer = make_napari_viewer()
     
     
     test_widget0 = function0()
