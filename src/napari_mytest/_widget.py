@@ -8,17 +8,22 @@ from napari.layers import Image
 
 @magic_factory
 def function0(a: int = 5):
-    c= a
-    print(c)
+    my_shared_vars.c = a
+    print(my_shared_vars.c)
 
 
 @magic_factory
 def function1(image: Image):
-    image.scale = [c,1,1]
+    image.scale = [my_shared_vars.c,1,1]
     
 
-global c
-c = 2  
+class shared_variables:
+    def init(self, c = 0):
+        self.c = c
+
+my_shared_vars = shared_variables  
+    
+    
 
 # this will not be executed by the plugin: widget0.a will not exists there
 if __name__ == '__main__':
