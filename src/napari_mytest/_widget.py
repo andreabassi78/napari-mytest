@@ -9,12 +9,10 @@ def function0(a: int = 5):
     my_shared_vars.c = a
     print('c=', my_shared_vars.c)
 
-
 @magic_factory
 def function1(b: int = 3):
     result = my_shared_vars.c * b
-    print('c*b=', result)
-    
+    print('c*b=', result)  
 
 from dataclasses import dataclass
 @dataclass
@@ -23,8 +21,6 @@ class Shared_variables:
 
 my_shared_vars = Shared_variables(2)  # create instance with just some initial value for c
     
-    
-
 # this will not be executed by the plugin: widget0.a will not exists there
 if __name__ == '__main__':
     import napari
