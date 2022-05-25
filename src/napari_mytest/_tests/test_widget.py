@@ -8,4 +8,4 @@ def test_widgets(make_napari_viewer, capsys):
     test_widget1(4)
      
     out, err = capsys.readouterr()
-    assert out == 12
+    assert '12' in out
